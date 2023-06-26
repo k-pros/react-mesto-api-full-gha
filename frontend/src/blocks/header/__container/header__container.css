@@ -1,0 +1,7 @@
+.header__container {
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}

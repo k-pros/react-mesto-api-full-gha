@@ -1,0 +1,5 @@
+.text-link {
+  text-decoration: none;
+  color: #fff;
+  transition: opacity ease-in-out 0.2s;
+}

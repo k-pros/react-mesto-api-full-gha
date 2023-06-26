@@ -1,0 +1,11 @@
+.cards {
+  max-width: 880px;
+  min-width: 282px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 918px)  {
+  .cards {
+    max-width: calc(100% - 38px);
+  }
+}

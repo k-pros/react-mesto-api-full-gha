@@ -1,0 +1,25 @@
+.profile__avatar-edit-btn {
+  width: 120px;
+  height: 120px;
+  color: #fff;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  align-self: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile__avatar-edit-btn:hover::after {
+  content: url(../../../images/edit-avatar.svg);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: .8;
+}
