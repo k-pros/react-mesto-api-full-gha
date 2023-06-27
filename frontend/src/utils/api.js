@@ -112,7 +112,8 @@ class Api {
 }
 
 const api = new Api({
-  url: "http://127.0.0.1:3000"
+  // url: "http://127.0.0.1:3000"
+  url: "https://api.sabai.nomoreparties.sbs"
 });
 
 export default api;

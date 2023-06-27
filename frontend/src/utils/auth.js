@@ -1,5 +1,5 @@
-// const BASE_URL = 'https://auth.nomoreparties.co';
-const BASE_URL = 'http://127.0.0.1:3000';
+// const BASE_URL = 'http://127.0.0.1:3000';
+const BASE_URL = 'https://api.sabai.nomoreparties.sbs';
 
 function checkResponse(res) {
   if (res.ok) {

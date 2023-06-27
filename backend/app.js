@@ -1,16 +1,16 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const cors = require('cors');
 const router = require('./routes');
-const { portNumber } = require('./utils/config');
 const { login, createUser } = require('./controllers/user');
 const { auth } = require('./middlewares/auth');
 const { validateCreateUser, validateLogin } = require('./middlewares/validation');
 const { handleErrors } = require('./middlewares/handleErrors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = portNumber } = process.env;
+const { PORT = 3000 } = process.env;
 
 const corsOptions = {
   origin: '*',
