@@ -12,27 +12,17 @@ const { validateCreateUser, validateLogin } = require('./middlewares/validation'
 const { handleErrors } = require('./middlewares/handleErrors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const {
+  PORT, DB_URL, LIMITER_OPTIONS, CORS_OPTIONS,
+} = require('./config');
 
-// настройка лимитера запросов
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
-const corsOptions = {
-  origin: '*',
-  optionsSuccessStatus: 200,
-  credentials: true,
-};
+const limiter = rateLimit(LIMITER_OPTIONS); // настройка лимитера запросов
 
 const app = express();
 
 mongoose.connect(DB_URL);
 
-app.use(cors(corsOptions));
+app.use(cors(CORS_OPTIONS));
 app.use(express.json());
 app.use(helmet()); // настройка заголовков HTTP для защиты приложения
 app.use(limiter);
